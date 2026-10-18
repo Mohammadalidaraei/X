@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="auth-container" class="container">
+        <div class="auth-box">
+            <i class="fab fa-twitter auth-logo"></i>
+            <h1 id="auth-title">Happening now</h1>
+            <h2 id="auth-subtitle">Join Twitter today.</h2>
+
+            <form id="auth-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <div id="register-fields" style="display: none;">
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="text" id="full_name" placeholder="Full Name">
+                </div>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" id="auth-submit-btn">Log in</button>
+            </form>
+
+            <p id="auth-toggle-text">
+                Don't have an account? <a href="#" id="toggle-auth">Sign up</a>
+            </p>
+            <p id="auth-error" class="error-msg"></p>
+        </div>
+    </div>
+
+    <div id="app-container" class="app-layout" style="display: none;">
+        <nav class="sidebar">
+            <div class="sidebar-links">
+                <i class="fab fa-twitter logo"></i>
+                <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-hashtag"></i> Explore</a>
+                <a href="#"><i class="far fa-bell"></i> Notifications</a>
+                <a href="#"><i class="far fa-envelope"></i> Messages</a>
+                <a href="#"><i class="far fa-user"></i> Profile</a>
+                <button class="tweet-btn-large">Tweet</button>
+            </div>
+            <div class="user-profile-mini">
+                <div class="user-info">
+                    <span id="current-user-fullname" class="full-name"></span>
+                    <span id="current-user-username" class="username"></span>
+                </div>
+                <button id="logout-btn" title="Logout"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </nav>
+
+        <main class="feed">
+            <header class="feed-header">
+                <h2>Home</h2>
+            </header>
+
+            <div class="tweet-compose">
+                <div class="compose-avatar">
+                    <i class="fas fa-user-circle fa-3x"></i>
+                </div>
+                <div class="compose-body">
+                    <textarea id="tweet-content" placeholder="What's happening?"></textarea>
+                    <div class="compose-actions">
+                        <button id="post-tweet-btn" class="tweet-btn-small">Tweet</button>
+                    </div>
+                    <p id="tweet-error" class="error-msg"></p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div id="tweets-list">
+                <!-- Tweets will be loaded here -->
+            </div>
+        </main>
+
+        <aside class="right-sidebar">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search Twitter">
+            </div>
+            <div class="trends">
+                <h3>Trends for you</h3>
+                <div class="trend-item">
+                    <span>Trending in PHP</span>
+                    <h4>#VanillaJS</h4>
+                    <span>10.5K Tweets</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
